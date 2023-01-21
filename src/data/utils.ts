@@ -67,6 +67,7 @@ async function start(
   startPolling((html: string) => {
     const activeGames = getActiveGames(html);
     console.log(activeGames, new Date());
+    botParseCallback(activeGames);
   });
 }
 

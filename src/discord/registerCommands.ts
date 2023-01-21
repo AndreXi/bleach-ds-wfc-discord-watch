@@ -1,3 +1,5 @@
+// Obteined in Discord.js docs
+
 import { REST, Routes } from "discord.js";
 import "dotenv/config";
 
