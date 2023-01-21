@@ -1,8 +1,4 @@
-import {
-  Interaction,
-  Client,
-  GatewayIntentBits,
-} from "discord.js";
+import { Interaction, Client, GatewayIntentBits } from "discord.js";
 import {} from "discord.js";
 import { start } from "./data/utils";
 import { refreshCommands } from "./discord/registerCommands";
@@ -23,7 +19,7 @@ client.on("ready", () => {
     if (activeGames?.size === 0) {
       deleteLastMessage();
       return;
-    };
+    }
 
     let totalPlayers = 0;
     let msg = "Warning! **[ $totalPlayers ]** Captain level Reiatsu detected!";
