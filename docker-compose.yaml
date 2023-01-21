@@ -5,4 +5,5 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    container_name: name
+    container_name: bleach-wifi-watch-bot
+    restart: unless-stopped
