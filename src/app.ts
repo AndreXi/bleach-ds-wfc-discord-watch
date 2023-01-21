@@ -1,4 +1,9 @@
-import { Interaction, Client, GatewayIntentBits } from "discord.js";
+import {
+  Interaction,
+  Client,
+  GatewayIntentBits,
+  ActivityType,
+} from "discord.js";
 import {} from "discord.js";
 import { start } from "./data/utils";
 import { refreshCommands } from "./discord/registerCommands";
@@ -7,6 +12,14 @@ import { deleteLastMessage, editOrSendMessage } from "./discord/sendMessage";
 // Instance the Discord client
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
+  presence: {
+    activities: [
+      {
+        name: "Bleach WiFi Server",
+        type: ActivityType.Watching,
+      },
+    ],
+  },
 });
 
 // Log in the console the current bot name
