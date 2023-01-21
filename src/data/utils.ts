@@ -1,5 +1,6 @@
 import gamecodes from "./gamecodes.json";
 import { JSDOM } from "jsdom";
+import { startPolling } from "./repositories/data.repository";
 
 type ActiveGame = {
   codename: string;
@@ -60,4 +61,13 @@ function getActiveGames(html: string) {
   return activeGames;
 }
 
-export { getActiveGame, getTrStrings, getActiveGames };
+async function start(
+  botParseCallback: (activeGames: Set<ActiveGame> | null) => void
+) {
+  startPolling((html: string) => {
+    const activeGames = getActiveGames(html);
+    console.log(activeGames, new Date());
+  });
+}
+
+export { getActiveGame, getTrStrings, getActiveGames, start };

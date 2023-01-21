@@ -1,6 +1,7 @@
 import { Interaction, REST, Routes } from "discord.js";
 
 import { Client, GatewayIntentBits } from "discord.js";
+import { start } from "./data/utils";
 import { refreshCommands } from "./registerCommands";
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
@@ -27,5 +28,8 @@ rest.post(Routes.channelMessages("1065838396121042947"), {
 
 // Refresh the commands
 refreshCommands();
+
+// Start bot
+start(() => {});
 
 export { client };
