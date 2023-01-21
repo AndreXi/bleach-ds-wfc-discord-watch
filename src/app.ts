@@ -11,7 +11,7 @@ import { deleteLastMessage, editOrSendMessage } from "./discord/sendMessage";
 
 // Instance the Discord client
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
+  intents: [GatewayIntentBits.GuildMessages], // Send messages
   presence: {
     activities: [
       {
